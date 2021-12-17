@@ -1,0 +1,135 @@
+Home Loan Design Wizard
+Project Requirements
+Version 1.4
+Introduction
+Purpose
+The purpose of the Home Loan Wizard...
+is to generate leads for the appropriate parties in the real estate market. It will gather information about prospective customers, including contact information, and route appropriately.
+Scope
+The scope of the project is to create...
+a gated form that will ask appropriate and applicable questions and then a back end that will send the lead to the designated parties.
+Description
+Interfaces
+An interface will need to be created...
+to communicate between the form and the lenders' own systems, with all the information provided by the customer as well as a tag indicating the department for whom the report is intended.
+Environment
+The form is a web application...
+that should also function completely in a mobile browser. The latest versions of Chrome, Firefox, Microsoft Edge, and Safari will be supported.
+User Characteristics
+The typical user of this web form is expected...
+to be an individual without much tech savvy, so the user interface should be very simple.
+As for the user on the lenders' side, they will have lots of technical acumen, and the interface need only be developed to the standards they provided, sending the information they requested in the format provided. They will take care of the rest.
+
+Requirements
+External Interfaces
+The interface with the lenders' system...
+should create an XML document that will be sent to an IP address and port that will be provided later. However, the information should be in the following format:
+  <customer>
+    <name>Jane Doe</name>
+    <email>jane.doe@gmail.com</email>
+    <loan>Refinance</loan>
+    <property>Town Home</property>
+    <city>New York City, New York</city>
+    <type>Secondary Home</type>
+    <found>False</found>
+    <agent>True</agent>
+    <price>$500,000</price>
+    <down>$100,000</down>
+    <credit>Excellent</credit>
+    <bankruptcy>True</credit>
+    <foreclosure>False</credit>
+    <address-1>341 S Main St</address-1>
+    <address-2>Ste 100</address-2>
+    <address-3>Salt Lake City, UT 84111</address-3>
+  </customer>
+The generation of this XML will be worked on AFTER the form's functionality has been checked and verified.
+
+Functions
+The form will be broken into several screens for ease of use.
+The welcome screen * This screen will have the name of the wizard and a button to start the process of generating the lead.
+Loan and property type query screen * This screen will require a description of the type of loan requested, as well as the type of property the loan will service. * Acceptable values for type of home loan include:
+Home Purchase
+Refinance
+Home Equity Loan/Line of Credit * Acceptable values for type of property include:
+Single Family Home
+Town Home
+Condo
+Multi Family Dwelling
+Mobile Home
+Property location screen * This screen will request from the user the city in which their desired property is located.
+Property purchase screen * This screen will discover how the property will be utilized by the customer * Acceptable values include:
+Primary Home
+Rental Property
+Secondary Home
+Property discovered screen * This screen will inquire as to whether the user has already found the property the loan will service.
+Agent discovered screen * This screen will inquire as to whether the user has a real estate agent with whom they are working.
+Price estimation screen * This screen will require an estimate for both the purchase price and available down payment amount. * Acceptable values include any dollar formatted amount for both data points.
+$1000.00
+1000.00
+$1000
+1000
+Credit score estimation * This screen will request an estimate of the user's credit score. * Acceptable values include:
+Excellent
+Good
+Fair
+Poor
+Bankruptcy / foreclosure info request screen * This screen will request the user's bankruptcy and foreclosure history in the last 7 years. * Acceptable responses include:
+No
+Bankruptcy
+Foreclosure
+Both
+Current address request screen * This screen is to check the user's current address * The response should be first line: street address, second line: street address cont'd, third line: city, state, and zip.
+User information request screen * This screen will get contact information from the user * Acceptable responses include:
+First Name - free text entry
+Last Name - free text entry
+email - verified email entry
+x@x.x where 'x' can be any number of letters/numbers
+Summary screen * This screen will show the user an overview of the information provided, and will allow them to submit the report, or to star the form over.
+Once the submit button is selected, the form will be sent to the lenders' server for appropriate distribution within their systems, and a summary of that distribution will be displayed.
+
+Distribution Rules
+On submission, routing is determined...
+using the following rules.
+If the loan is for purchasing a primary home, Steve will handle it.
+
+To handle a purchase of a secondary or rental property, Jan will take care of them.
+
+For HELOC or Refinance purposes, route the customer to the corporate lending offices.
+
+For any multi-family dwelling, have our business banker Mike contact the customer, and provide his info.
+
+If the customer has Fair or Poor credit, OR has a bankruptcy or foreclosure, reject the application out of hand.
+
+If the customer has both a bankruptcy and a foreclosure, provide the email for our financial counselling services.
+
+For any cash purchases, route to Stella, and for any down payment of $250k or higher, loop in Melissa.
+
+Performance Requirements
+The page should load...
+in no longer than 3 seconds, and page transitions should take no longer th an 2 seconds, with 1 and 2 being the target and minimum thresholds respectively.
+Project Stakeholders
+Development
+Team members
+Development Manager: Bob
+
+Developer: Jack
+
+Developer: Diane
+
+Design
+Team members
+Designer: Jackie
+
+Quality Assurance
+Team members
+Team lead: Anne Analyst: Frank
+
+Industry Partners
+Partners
+Lender: Mac Underwriter: Millie Agent: Marlene
+
+Contributions
+If you see a problem or a typo, please fork, make the necessary changes, and create a pull request so we can review your changes and merge them into the master repo and branch.
+
+Copyright
+© DevMountain LLC, 2018. Unauthorized use and/or duplication of this material without express and written permission from DevMountain, LLC is strictly prohibited. Excerpts and links may be used, provided that full and clear credit is given to DevMountain with appropriate and specific direction to the original content.
